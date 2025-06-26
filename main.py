@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from retriever import retrieve_documents, embed_documents, store_in_chroma, semantic_search
+from retriever import retrieve_documents, embed_documents, store_in_chroma, semantic_search, generate_answer
 from pydantic import BaseModel
 import os 
 
@@ -23,6 +23,6 @@ def query_agent(query: QueryInput):
         raise HTTPException(status_code=500, detail=str(e))
 
     return {
-        "answer": "Placeholder answer based on retrieved docs",
+        "answer": generate_answer(query.query, reference_docs["documents"]),
         "sources": reference_docs["sources"]
     }
