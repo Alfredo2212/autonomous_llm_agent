@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from retriever import retrieve_documents, embed_documents, store_in_chroma, semantic_search, generate_answer
+from retriever import retrieve_documents, embed_documents, store_in_chroma, semantic_search
+from llm_agent import generate_answer
 from pydantic import BaseModel
 import os 
 
