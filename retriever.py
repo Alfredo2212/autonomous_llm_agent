@@ -1,6 +1,19 @@
 from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
+import os
+
+def retrieve_documents():
+    docs = []
+    for i in range(1,11):
+        file_name = f"reference{str(i).zfill(2)}.txt"
+        file_path = os.path.join("data", file_name)
+        with open(file_path, "r") as f:
+            content = f.read()
+            docs.append({
+                "source": file_name,
+                "content": content
+            })
 
 def embed_documents(docs):
     model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -9,11 +22,7 @@ def embed_documents(docs):
     return embeddings
 
 def store_in_chroma(docs, embeddings):
-    client = chromadb.Client(Settings(
-        chroma_db_impl="duckdb+parquet",
-        persist_directory=".chroma"
-    ))
-
+    client = chromadb.Client()
     collection = client.get_or_create_collection(name="reference_docs")
 
     ids = [doc["source"] for doc in docs]
