@@ -1,0 +1,15 @@
+Visual reasoning in action
+Thinking with images allows you to interact with ChatGPT more easily. You can ask questions 
+by taking a photo without worrying about the positioning of objects—whether the text is 
+upside down or there are multiple physics problems in one photo. Even if objects are not 
+obvious at first glance, visual reasoning allows the model to zoom in to see more clearly.
+
+Our latest visual reasoning models work in tandem with other tools like Python data analysis, 
+web search, image generation to creatively and effectively solve more complex problems, 
+delivering our first multimodal agentic experience to users.
+
+In particular, thinking with images—without relying on browsing—leads to significant gains 
+across all perception benchmarks we’ve evaluated. Our models set new state-of-the-art 
+performance in STEM question-answering (MMMU, MathVista), chart reading and reasoning 
+(CharXiv), perception primitives (VLMs are Blind), and visual search (V*). On V*, our 
+visual reasoning approach achieves 95.7% accuracy, largely solving the benchmark.

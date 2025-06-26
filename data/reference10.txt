@@ -1,0 +1,13 @@
+Building safe and trustworthy agents
+We're releasing Codex as a research preview, in line with our iterative deployment strategy. 
+We prioritized security and transparency when designing Codex so users can verify its outputs - 
+a safeguard that grows increasingly more important as AI models handle more complex coding 
+tasks independently and safety considerations evolve. Users can check Codex’s work through 
+citations, terminal logs and test results. When uncertain or faced with test failures, 
+the Codex agent explicitly communicates these issues, enabling users to make informed 
+decisions about how to proceed. It still remains essential for users to manually review 
+and validate all agent-generated code before integration and execution.
+
+A primary goal while training codex-1 was to align outputs closely with human coding 
+preferences and standards. Compared to OpenAI o3, codex-1 consistently produces cleaner 
+patches ready for immediate human review and integration into standard workflows.

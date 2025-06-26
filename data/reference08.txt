@@ -1,0 +1,13 @@
+Introducing Codex
+Today we’re launching a research preview of Codex: a cloud-based software engineering 
+agent that can work on many tasks in parallel. Codex can perform tasks for you such as 
+writing features, answering questions about your codebase, fixing bugs, and proposing pull 
+requests for review; each task runs in its own cloud sandbox environment, preloaded with 
+your repository.
+
+Codex is powered by codex-1, a version of OpenAI o3 optimized for software engineering. 
+It was trained using reinforcement learning on real-world coding tasks in a variety of 
+environments to generate code that closely mirrors human style and PR preferences, adheres 
+precisely to instructions, and can iteratively run tests until it receives a passing result. 
+We’re starting to roll out Codex to ChatGPT Pro, Enterprise, and Team users today, with 
+support for Plus and Edu coming soon.

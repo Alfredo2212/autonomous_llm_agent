@@ -1,0 +1,18 @@
+Toward agentic tool use
+OpenAI o3 and o4-mini have full access to tools within ChatGPT, as well as your own custom 
+tools via function calling in the API. These models are trained to reason about how to 
+solve problems, choosing when and how to use tools to produce detailed and thoughtful 
+answers in the right output formats quickly—typically in under a minute.
+
+For example, a user might ask: “How will summer energy usage in California compare to 
+last year?” The model can search the web for public utility data, write Python code to 
+build a forecast, generate a graph or image, and explain the key factors behind the 
+prediction, chaining together multiple tool calls. Reasoning allows the models to react 
+and pivot as needed to information it encounters. For example, they can search the web 
+multiple times with the help of search providers, look at results, and try new searches 
+if they need more info.
+
+This flexible, strategic approach allows the models to tackle tasks that require access 
+to up-to-date information beyond the model’s built-in knowledge, extended reasoning, 
+synthesis, and output generation across modalities.
+

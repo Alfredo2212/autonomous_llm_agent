@@ -1,0 +1,21 @@
+Thinking with images
+OpenAI o3 and o4-mini are the latest visual reasoning models in our o-series. For the first 
+time, our models can think with images in their chain-of-thought—not just see them.
+
+Similar to our earlier OpenAI o1 model, o3 and o4-mini are trained to think for longer 
+before answering—and use a long internal chain of thought before responding to the user. 
+o3 and o4-mini further extend this capability by thinking with images in their chain-of-thought, 
+which is achieved by transforming user uploaded images with tools, allowing them to crop,
+zoom in, and rotate, in addition to other simple image processing techniques. More importantly, 
+these capabilities come natively, without relying on separate specialized models.
+
+ChatGPT’s enhanced visual intelligence helps you solve tougher problems by analyzing images 
+more thoroughly, accurately, and reliably than ever before. It can seamlessly combine
+advanced reasoning with tools like web search and image manipulation—automatically zooming, 
+cropping, flipping, or enhancing your images—to extract insights even from imperfect photos. 
+For example, you can upload a photo of an economics problem set to receive step-by-step 
+explanations, or share a screenshot of a build error to quickly get a root-cause analysis.
+
+This approach enables a new axis for test-time compute scaling that seamlessly blends visual 
+and textual reasoning, as reflected in their state-of-the-art performance across multimodal 
+benchmarks, marking a significant step toward multimodal reasoning.

@@ -1,0 +1,15 @@
+Continuing to scale reinforcement learning
+Throughout the development of OpenAI o3, we’ve observed that large-scale reinforcement 
+learning exhibits the same “more compute = better performance” trend observed in 
+GPT‑series pretraining. By retracing the scaling path—this time in RL—we’ve pushed an 
+additional order of magnitude in both training compute and inference-time reasoning, 
+yet still see clear performance gains, validating that the models’ performance continues 
+to improve the more they’re allowed to think. At equal latency and cost with OpenAI o1, 
+o3 delivers higher performance in ChatGPT—and we've validated that if we let it think 
+longer, its performance keeps climbing.
+
+We also trained both models to use tools through reinforcement learning—teaching them not 
+just how to use tools, but to reason about when to use them. Their ability to deploy 
+tools based on desired outcomes makes them more capable in open-ended situations—particularly 
+those involving visual reasoning and multi-step workflows. This improvement is reflected 
+both in academic benchmarks and real-world tasks, as reported by early testers.
