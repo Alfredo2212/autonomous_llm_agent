@@ -14,6 +14,7 @@ def retrieve_documents():
                 "source": file_name,
                 "content": content
             })
+    return docs
 
 def embed_documents(docs):
     model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -35,3 +36,20 @@ def store_in_chroma(docs, embeddings):
     )
 
     return collection
+
+def semantic_search(collection, query: str, k=3):
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+    client = chromadb.Client()
+    collection = client.get_collection(name="reference_docs")
+
+    query_embedding = model.encode(query).tolist()
+
+    results = collection.query(
+        query_embeddings=[query_embedding],
+        n_results=k
+    )
+
+    return {
+        "documents": results["documents"][0],
+        "sources": results['ids'][0]
+    }
