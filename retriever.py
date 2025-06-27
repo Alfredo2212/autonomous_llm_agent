@@ -1,8 +1,17 @@
+'''
+This .py file handles:
+- Document Retrieval retrieve_documents()
+- Embedding embed_documents()
+- Storage store_in_chroma()
+- Semantic search semantic_search()
+Integration with sentence transformers & chroma DB
+'''
 from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
 import os
 
+# Load mock documents from /data 10 referenceXX.txt
 def retrieve_documents():
     docs = []
     for i in range(1,11):
@@ -16,12 +25,15 @@ def retrieve_documents():
             })
     return docs
 
+# Convert documents into vector embeddings 
 def embed_documents(docs):
     model = SentenceTransformer("all-MiniLM-L6-v2")
     texts = [doc["content"] for doc in docs]
     embeddings = model.encode(texts)
     return embeddings
 
+# Store documents with their respective embeddings
+# in chromaDB, prep for semantic similarity 
 def store_in_chroma(docs, embeddings):
     client = chromadb.Client()
     collection = client.get_or_create_collection(name="reference_docs")
@@ -37,6 +49,8 @@ def store_in_chroma(docs, embeddings):
 
     return collection
 
+# Perform semantic search over stored document embeddings
+# retrieve top-k (3) most relevant documents based on query similarities
 def semantic_search(collection, query: str, k=3):
     model = SentenceTransformer("all-MiniLM-L6-v2")
     client = chromadb.Client()
