@@ -1,8 +1,9 @@
+import os 
 from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 from retriever import retrieve_documents, embed_documents, store_in_chroma, semantic_search
 from llm_agent import generate_answer
-from pydantic import BaseModel
-import os 
+from logger import log_query
 
 app = FastAPI()
 
@@ -23,7 +24,9 @@ def query_agent(query: QueryInput):
         print("Error occured:", str(e))
         raise HTTPException(status_code=500, detail=str(e))
 
+    answer = generate_answer(query.query, reference_docs["documents"])
+    log_query(query.query, answer, reference_docs["sources"])
     return {
-        "answer": generate_answer(query.query, reference_docs["documents"]),
+        "answer": answer,
         "sources": reference_docs["sources"]
     }
